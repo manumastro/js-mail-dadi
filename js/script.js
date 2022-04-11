@@ -19,27 +19,33 @@ const listaMailAutorizzati =[
   "giovanni.crispino@gmail.com",
   "giancarlo.croce@gmail.com"
 ];
+const bottone_email = document.getElementById('bottone-email');
 
-const emailInput = prompt("Inserire l'Email");
-console.log(emailInput);
+bottone_email.addEventListener('click', function(){
 
-let emailCheck = false;
+  const email_input = document.getElementById('email-input').value;
+  let validation_h1 = document.getElementById('validation-h1'); 
 
-for(let i = 0; i < listaMailAutorizzati.length; i++){
-  if(emailInput === listaMailAutorizzati[i]){
+  let emailCheck = false;
+
+  for(let i = 0; i < listaMailAutorizzati.length; i++){
+  if(email_input === listaMailAutorizzati[i]){
     emailCheck = true;
   }
   else if (!emailCheck){
     emailCheck = false;
   }
-}
+  }
 
-if(emailCheck === true){
-  console.log("autorizzazione concessa");
-}
-else if(emailCheck === false){
-  console.log("autorizzazione non concessa");
-}
+  if(emailCheck === true){
+    validation_h1.innerHTML = 'Email valida';
+  }
+  else if(emailCheck === false){
+    validation_h1.innerHTML = 'Email non valida';
+  }
+})
+
+
 
 
 /*
@@ -48,44 +54,18 @@ Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
 Stabilire il vincitore, in base a chi fa il punteggio più alto.
 */
 
-let randomUman = Math.floor(Math.random() * 6 + 1);
-console.log("Numero giocatore", randomUman);
+// let randomUman = Math.floor(Math.random() * 6 + 1);
+// console.log("Numero giocatore", randomUman);
 
-let randomPC = Math.floor(Math.random() * 6 + 1);
-console.log("Numero PC", randomPC);
+// let randomPC = Math.floor(Math.random() * 6 + 1);
+// console.log("Numero PC", randomPC);
 
-if(randomUman > randomPC){
-  console.log("Hai vinto tu!");
-}
-else if(randomUman < randomPC){
-  console.log("Ha vinto il PC");
-}
-else{
-  console.log("Siete pari!");
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Gioco dei dadi
-Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
-Stabilire il vincitore, in base a chi fa il punteggio più alto.
-*/
+// if(randomUman > randomPC){
+//   console.log("Hai vinto tu!");
+// }
+// else if(randomUman < randomPC){
+//   console.log("Ha vinto il PC");
+// }
+// else{
+//   console.log("Siete pari!");
+// }
