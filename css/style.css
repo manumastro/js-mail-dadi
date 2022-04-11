@@ -5,3 +5,23 @@
 #mail-verification-container{
   height: 100%;
 }
+
+#dadi-div{
+  background-color: rgb(204, 229, 250);
+  height: 50vh;
+}
+#dadi-container{
+  height: 100%;
+}
+
+
+.btn-hide{
+  display: none;
+}
+
+.flex-properties{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

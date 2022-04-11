@@ -53,19 +53,65 @@ Gioco dei dadi
 Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
 Stabilire il vincitore, in base a chi fa il punteggio più alto.
 */
+const esito = document.getElementById('esito');
+const bottone_dadi = document.getElementById('bottone-dadi');
 
-// let randomUman = Math.floor(Math.random() * 6 + 1);
-// console.log("Numero giocatore", randomUman);
+const dadi_container = document.getElementById('dadi-container');
 
-// let randomPC = Math.floor(Math.random() * 6 + 1);
-// console.log("Numero PC", randomPC);
+  bottone_dadi.addEventListener('click', function(){
+  
+    bottone_dadi.style.display = 'none';
 
-// if(randomUman > randomPC){
-//   console.log("Hai vinto tu!");
-// }
-// else if(randomUman < randomPC){
-//   console.log("Ha vinto il PC");
-// }
-// else{
-//   console.log("Siete pari!");
-// }
+    let randomUman = Math.floor(Math.random() * 6 + 1);
+    console.log("Numero giocatore", randomUman);
+  
+    let randomPC = Math.floor(Math.random() * 6 + 1);
+    console.log("Numero PC", randomPC);
+
+    esito.classList.add('flex-properties');
+  
+    if(randomUman > randomPC){
+      esito.innerHTML = `<h1 class="mb-5">Hai vinto tu!</h1>
+                          <h2> Numero giocatore: ${randomUman}
+                          <h2> Numero PC: ${randomPC}`;
+    }
+    else if(randomUman < randomPC){
+      esito.innerHTML = `<h1 class="mb-5">Hai perso!</h1>
+                          <h2> Numero giocatore: ${randomUman}
+                          <h2> Numero PC: ${randomPC}`;
+    }
+    else{
+      esito.innerHTML = `<h1 class="mb-5">Pari!</h1>
+                          <h2> Numero giocatore: ${randomUman}
+                          <h2> Numero PC: ${randomPC}`;
+    }
+    
+    const bottone_dadi_ancora = document.getElementById('bottone-dadi-ancora');
+    bottone_dadi_ancora.classList.remove('btn-hide');
+    bottone_dadi_ancora.addEventListener('click', function(){
+      let randomUman = Math.floor(Math.random() * 6 + 1);
+      console.log("Numero giocatore", randomUman);
+    
+      let randomPC = Math.floor(Math.random() * 6 + 1);
+      console.log("Numero PC", randomPC);
+    
+      if(randomUman > randomPC){
+        esito.innerHTML = `<h1 class="mb-5">Hai vinto tu!</h1>
+                            <h2> Numero giocatore: ${randomUman}
+                            <h2> Numero PC: ${randomPC}`;
+      }
+      else if(randomUman < randomPC){
+        esito.innerHTML = `<h1 class="mb-5">Hai perso!</h1>
+                            <h2> Numero giocatore: ${randomUman}
+                            <h2> Numero PC: ${randomPC}`;
+      }
+      else{
+        esito.innerHTML = `<h1 class="mb-5">Pari!</h1>
+                            <h2> Numero giocatore: ${randomUman}
+                            <h2> Numero PC: ${randomPC}`;
+      }
+    })
+  })
+
+
+
