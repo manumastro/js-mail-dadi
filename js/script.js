@@ -32,9 +32,9 @@ bottone_email.addEventListener('click', function(){
   if(email_input === listaMailAutorizzati[i]){
     emailCheck = true;
   }
-  else if (!emailCheck){
+  /* else if (!emailCheck){
     emailCheck = false;
-  }
+  } */
   }
 
   if(emailCheck === true){
